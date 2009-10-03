@@ -1,4 +1,6 @@
 
+/* written by C99 style */
+
 #include "mlist.h"
 
 mlist_t *mlist_alloc () {

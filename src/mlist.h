@@ -1,4 +1,6 @@
 
+/* written by C99 style */
+
 #ifndef MLIST_H
 #define MLIST_H
 
