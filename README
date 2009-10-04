@@ -1,5 +1,5 @@
 
-mlist is the memory list implimentation written by C99.
+mlist is the memory list implimentation written by C with C99 style.
 
 Copyright(C) 2009  Tatsuhiko Kubo <cubicdaiya@gmail.com>
 
