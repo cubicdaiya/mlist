@@ -14,7 +14,7 @@ int main (int argc, char *argv[]) {
   list = mlist_extend(list);
   c    = mlist_data_alloc(list, sizeof(char));
   list = mlist_extend(list);
-  s = mlist_data_alloc(list, strlen(name) + 1);
+  s    = mlist_data_alloc(list, strlen(name) + 1);
   list = mlist_extend(list);
   *n = 5;
   *c = 'a';
