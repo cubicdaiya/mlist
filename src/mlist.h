@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+#define MLIST_FREE(p) do { free(p); (p) = NULL; } while(0);
+
 typedef void mlist_data_t;
 
 typedef struct mlist_t {

@@ -31,8 +31,8 @@ void mlist_free (mlist_t *list) {
   for (mlist_t *p=list->begin;p!=NULL;) {
     mlist_t *current = p;
     mlist_t *next_p = p->next;
-    free(current->data);
-    free(current);
+    MLIST_FREE(current->data);
+    MLIST_FREE(current);
     p = next_p;
   }
 }
