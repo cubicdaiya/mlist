@@ -18,10 +18,10 @@ int main (int argc, char *argv[]) {
   list = mlist_extend(list);
   *n = 5;
   *c = 'a';
-  strcpy(s, name);
+  strncpy(s, name, strlen(name));
   printf("n = %d\n", *n);
   printf("c = %c\n", *c);
-  printf("name = %s\n", name);
+  printf("name = %s\n", s);
   mlist_free(list);
   
   return 0;
