@@ -17,10 +17,10 @@ typedef struct mlist_t {
   struct mlist_t *begin;
 } mlist_t;
 
-mlist_t *mlist_alloc();
-mlist_data_t *mlist_data_alloc(mlist_t *p, size_t size);
+mlist_t *mlist_create();
+mlist_data_t *mlist_palloc(mlist_t *p, size_t size);
 mlist_t *mlist_extend(mlist_t *p);
-void mlist_free(mlist_t *p);
+void mlist_destroy(mlist_t *p);
 
 
 #endif

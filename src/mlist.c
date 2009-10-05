@@ -3,7 +3,7 @@
 
 #include "mlist.h"
 
-mlist_t *mlist_alloc () {
+mlist_t *mlist_create () {
   mlist_t *p;
   if ((p = (mlist_t *)malloc(sizeof(mlist_t))) == NULL) {
     return NULL;
@@ -15,19 +15,19 @@ mlist_t *mlist_alloc () {
 }
 
 mlist_t *mlist_extend(mlist_t *p) {
-  p->next = mlist_alloc();
+  p->next = mlist_create();
   p->next->begin = p->begin;
   return p->next;
 }
 
-mlist_data_t *mlist_data_alloc(mlist_t *p, size_t size) {
+mlist_data_t *mlist_palloc(mlist_t *p, size_t size) {
   if ((p->data = (mlist_data_t *)malloc(size)) == NULL) {
     return NULL;
   }
   return p->data;
 }
 
-void mlist_free (mlist_t *list) {
+void mlist_destroy (mlist_t *list) {
   for (mlist_t *p=list->begin;p!=NULL;) {
     mlist_t *current = p;
     mlist_t *next_p = p->next;

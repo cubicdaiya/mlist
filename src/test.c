@@ -9,12 +9,12 @@ int main (int argc, char *argv[]) {
   char *c;
   char *s = NULL;
   const char *name = "cubicdaiya";
-  list = mlist_alloc();
-  n    = mlist_data_alloc(list, sizeof(int));
+  list = mlist_create();
+  n    = mlist_palloc(list, sizeof(int));
   list = mlist_extend(list);
-  c    = mlist_data_alloc(list, sizeof(char));
+  c    = mlist_palloc(list, sizeof(char));
   list = mlist_extend(list);
-  s    = mlist_data_alloc(list, strlen(name) + 1);
+  s    = mlist_palloc(list, strlen(name) + 1);
   list = mlist_extend(list);
   *n = 5;
   *c = 'a';
@@ -22,7 +22,7 @@ int main (int argc, char *argv[]) {
   printf("n = %d\n", *n);
   printf("c = %c\n", *c);
   printf("name = %s\n", s);
-  mlist_free(list);
+  mlist_destroy(list);
   
   return 0;
 }
