@@ -3,19 +3,21 @@ CC = gcc
 CFLAGS = -Wall -g -std=c99
 IFLAGS = -I../src
 STATIC_LFILE = ../src/libmlist.a
-OBJS = test.o $(STATIC_LFILE)
+ALL_OBJS = example
+OBJS = test.o
 
 .c.o:
 	cd ../src && $(MAKE)
 	$(CC) $(CFLAGS) $(IFLAGS) -c $<
 
-all : $(OBJS)
+all : $(ALL_OBJS)
 
-sample : $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $(OBJS)
+
+example : $(OBJS) $(STATIC_LFILE)
+	$(CC) $(CFLAGS) -o $@ $(OBJS) $(STATIC_LFILE)
 
 clean :
-	rm $(OBJS)
+	rm $(ALL_OBJS) $(OBJS) $(STATIC_LFILE)
 
 
 mlist.o: mlist.c mlist.h
