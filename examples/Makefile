@@ -5,6 +5,7 @@ IFLAGS = -I../src
 STATIC_LFILE = ../src/libmlist.a
 ALL_OBJS = example
 OBJS = test.o
+MLIST_OBJS = ../src/mlist.o
 
 .c.o:
 	cd ../src && $(MAKE)
@@ -17,7 +18,7 @@ example : $(OBJS) $(STATIC_LFILE)
 	$(CC) $(CFLAGS) -o $@ $(OBJS) $(STATIC_LFILE)
 
 clean :
-	rm $(ALL_OBJS) $(OBJS) $(STATIC_LFILE)
+	rm $(ALL_OBJS) $(OBJS) $(STATIC_LFILE) $(MLIST_OBJS)
 
 
 mlist.o: mlist.c mlist.h
