@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "mlist.h"
+#include <mlist.h>
 
 int main (int argc, char *argv[]) {
   
