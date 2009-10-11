@@ -20,11 +20,13 @@ mlist_t *mlist_extend(mlist_t *p) {
   return p->next;
 }
 
-mlist_data_t *mlist_palloc(mlist_t *p, size_t size) {
-  if ((p->data = (mlist_data_t *)malloc(size)) == NULL) {
+mlist_data_t *mlist_palloc(mlist_t **p, size_t size) {
+  mlist_t *lp = *p;
+  if ((lp->data = (mlist_data_t *)malloc(size)) == NULL) {
     return NULL;
   }
-  return p->data;
+  *p = mlist_extend(*p);
+  return lp->data;
 }
 
 void mlist_destroy (mlist_t *list) {

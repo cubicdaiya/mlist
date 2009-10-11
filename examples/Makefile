@@ -20,6 +20,4 @@ example : $(OBJS) $(STATIC_LFILE)
 clean :
 	rm $(ALL_OBJS) $(OBJS) $(STATIC_LFILE) $(MLIST_OBJS)
 
-
-mlist.o: mlist.c mlist.h
-
+test.o : test.c ../src/mlist.c ../src/mlist.h
