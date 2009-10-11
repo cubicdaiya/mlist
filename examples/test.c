@@ -7,18 +7,23 @@ int main (int argc, char *argv[]) {
   mlist_t *list;
   int *n;
   char *c;
-  char *s = NULL;
-  const char *name = "cubicdaiya";
+  char *s1 = NULL;
+  char *s2 = NULL;
+  const char *name1 = "bokko";
+  const char *name2 = "cubicdaiya";
   list = mlist_create();
   n    = mlist_palloc(&list, sizeof(int));
   c    = mlist_palloc(&list, sizeof(char));
-  s    = mlist_palloc(&list, strlen(name) + 1);
+  s1    = mlist_palloc(&list, strlen(name1) + 1);
+  s2    = mlist_palloc(&list, strlen(name2) + 1);
   *n = 5;
   *c = 'a';
-  strncpy(s, name, strlen(name) + 1);
+  strncpy(s1, name1, strlen(name1) + 1);
+  strncpy(s2, name2, strlen(name2) + 1);
   printf("n = %d\n", *n);
   printf("c = %c\n", *c);
-  printf("name = %s\n", s);
+  printf("name1 = %s\n", s1);
+  printf("name2 = %s\n", s2);
   mlist_destroy(list);
   
   return 0;
