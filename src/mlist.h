@@ -4,10 +4,22 @@
 #ifndef MLIST_H
 #define MLIST_H
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define MLIST_FREE(p) do { free(p); (p) = NULL; } while(0);
+#define MLIST_MALLOC(p, n)             \
+  do {                                 \
+    if (((p) = malloc(n)) == NULL) {   \
+      printf("malloc failed");         \
+      exit(-1);                        \
+    }                                  \
+  } while(false)
+#define MLIST_FREE(p)                           \
+  do {                                          \
+    free(p);                                    \
+    (p) = NULL;                                 \
+  } while(false)
 
 typedef void mlist_data_t;
 

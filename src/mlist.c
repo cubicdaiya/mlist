@@ -5,9 +5,7 @@
 
 mlist_t *mlist_create () {
   mlist_t *p;
-  if ((p = (mlist_t *)malloc(sizeof(mlist_t))) == NULL) {
-    return NULL;
-  }
+  MLIST_MALLOC(p, sizeof(mlist_t));
   p->data = NULL;
   p->next = NULL;
   p->begin = p;
@@ -32,7 +30,7 @@ mlist_data_t *mlist_palloc(mlist_t **p, size_t size) {
 void mlist_destroy (mlist_t *list) {
   for (mlist_t *p=list->begin;p!=NULL;) {
     mlist_t *current = p;
-    mlist_t *next = p->next;
+    mlist_t *next    = p->next;
     MLIST_FREE(current->data);
     MLIST_FREE(current);
     p = next;
