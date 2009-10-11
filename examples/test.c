@@ -14,10 +14,10 @@ int main (int argc, char *argv[]) {
   list = mlist_create();
   n    = mlist_palloc(&list, sizeof(int));
   c    = mlist_palloc(&list, sizeof(char));
-  s1    = mlist_palloc(&list, strlen(name1) + 1);
-  s2    = mlist_palloc(&list, strlen(name2) + 1);
-  *n = 5;
-  *c = 'a';
+  s1   = mlist_palloc(&list, strlen(name1) + 1);
+  s2   = mlist_palloc(&list, strlen(name2) + 1);
+  *n   = 5;
+  *c   = 'a';
   strncpy(s1, name1, strlen(name1) + 1);
   strncpy(s2, name2, strlen(name2) + 1);
   printf("n = %d\n", *n);
