@@ -20,9 +20,7 @@ mlist_t *mlist_extend(mlist_t *p) {
 
 mlist_data_t *mlist_palloc(mlist_t **p, size_t size) {
   mlist_t *lp = *p;
-  if ((lp->data = (mlist_data_t *)malloc(size)) == NULL) {
-    return NULL;
-  }
+  MLIST_MALLOC(lp->data, size);
   *p = mlist_extend(*p);
   return lp->data;
 }
