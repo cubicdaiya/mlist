@@ -5,8 +5,8 @@
 int main (int argc, char *argv[]) {
   
   mlist_t *list;
-  int  *n;
-  char *c;
+  int  *n  = NULL;
+  char *c  = NULL;
   char *s1 = NULL;
   char *s2 = NULL;
   const char *name[] = {"bokko", "cubicdaiya"};
