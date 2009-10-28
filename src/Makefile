@@ -4,7 +4,7 @@ AR = ar
 CFLAGS = -Wall -g -std=c99
 ARFLAGS = r
 STATIC_LFILE = libmlist.a
-DYNAMIC_LFILE = libesc.so
+DYNAMIC_LFILE = libmlist.so
 OBJS = mlist.o
 
 .c.o:
