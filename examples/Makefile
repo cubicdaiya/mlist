@@ -4,7 +4,7 @@ CFLAGS = -Wall -g -std=c99
 IFLAGS = -I../src
 STATIC_LFILE = ../src/libmlist.a
 ALL_OBJS = example
-OBJS = test.o
+OBJS = example.o
 MLIST_OBJS = ../src/mlist.o
 
 .c.o:
@@ -20,4 +20,4 @@ example : $(OBJS) $(STATIC_LFILE)
 clean :
 	rm $(ALL_OBJS) $(OBJS) $(STATIC_LFILE) $(MLIST_OBJS)
 
-test.o : test.c ../src/mlist.c ../src/mlist.h
+example.o : example.c ../src/mlist.c ../src/mlist.h
