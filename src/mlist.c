@@ -3,6 +3,13 @@
 
 #include "mlist.h"
 
+static mlist_t *mlist_extend(mlist_t *p);
+static mlist_t *mlist_extend(mlist_t *p) {
+  p->next = mlist_create();
+  p->next->begin = p->begin;
+  return p->next;
+}
+
 mlist_t *mlist_create () {
   mlist_t *p;
   MLIST_MALLOC(p, sizeof(mlist_t));
@@ -10,12 +17,6 @@ mlist_t *mlist_create () {
   p->next = NULL;
   p->begin = p;
   return p;
-}
-
-mlist_t *mlist_extend(mlist_t *p) {
-  p->next = mlist_create();
-  p->next->begin = p->begin;
-  return p->next;
 }
 
 mlist_data_t *mlist_palloc(mlist_t **p, size_t size) {

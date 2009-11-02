@@ -31,7 +31,6 @@ typedef struct mlist_t {
 
 mlist_t *mlist_create();
 mlist_data_t *mlist_palloc(mlist_t **p, size_t size);
-mlist_t *mlist_extend(mlist_t *p);
 void mlist_destroy(mlist_t *p);
 
 
