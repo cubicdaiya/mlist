@@ -19,7 +19,7 @@ mlist_t *mlist_create () {
   return p;
 }
 
-mlist_data_t *mlist_palloc(mlist_t **p, size_t size) {
+mlist_data_t *mlist_alloc(mlist_t **p, size_t size) {
   mlist_t *lp = *p;
   MLIST_MALLOC(lp->data, size);
   *p = mlist_extend(*p);

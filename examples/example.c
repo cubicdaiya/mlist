@@ -11,10 +11,10 @@ int main (int argc, char *argv[]) {
   char *s2 = NULL;
   const char *name[] = {"bokko", "cubicdaiya"};
   list = mlist_create();
-  n    = mlist_palloc(&list, sizeof(int));
-  c    = mlist_palloc(&list, sizeof(char));
-  s1   = mlist_palloc(&list, strlen(name[0]) + 1);
-  s2   = mlist_palloc(&list, strlen(name[1]) + 1);
+  n    = mlist_alloc(&list, sizeof(int));
+  c    = mlist_alloc(&list, sizeof(char));
+  s1   = mlist_alloc(&list, strlen(name[0]) + 1);
+  s2   = mlist_alloc(&list, strlen(name[1]) + 1);
   *n   = 5;
   *c   = 'a';
   strncpy(s1, name[0], strlen(name[0]) + 1);
