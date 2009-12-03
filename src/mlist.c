@@ -10,7 +10,7 @@ static mlist_t *mlist_extend(mlist_t *p) {
   return p->next;
 }
 
-mlist_t *mlist_create () {
+mlist_t *mlist_create (void) {
   mlist_t *p;
   MLIST_MALLOC(p, sizeof(mlist_t));
   p->datum = NULL;

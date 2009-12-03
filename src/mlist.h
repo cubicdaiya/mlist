@@ -29,7 +29,7 @@ typedef struct mlist_t {
   struct mlist_t *begin;
 } mlist_t;
 
-mlist_t *mlist_create();
+mlist_t *mlist_create(void);
 mlist_datum_t *mlist_alloc(mlist_t **p, size_t size);
 void mlist_destroy(mlist_t *p);
 
