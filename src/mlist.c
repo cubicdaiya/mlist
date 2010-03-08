@@ -14,7 +14,7 @@ mlist_t *mlist_create (void) {
   mlist_t *p;
   MLIST_MALLOC(p, sizeof(mlist_t));
   p->datum = NULL;
-  p->next = NULL;
+  p->next  = NULL;
   p->begin = p;
   return p;
 }
