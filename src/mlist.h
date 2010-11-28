@@ -21,16 +21,14 @@
     (p) = NULL;                                 \
   } while(false)
 
-typedef void mlist_datum_t;
-
 typedef struct mlist_t {
-  mlist_datum_t *datum;
+  void *datum;
   struct mlist_t *next;
   struct mlist_t *begin;
 } mlist_t;
 
 mlist_t *mlist_create(void);
-mlist_datum_t *mlist_alloc(mlist_t **p, size_t size);
+void *mlist_alloc(mlist_t **p, size_t size);
 void mlist_destroy(mlist_t *p);
 
 

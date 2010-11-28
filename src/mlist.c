@@ -5,7 +5,7 @@
 
 static mlist_t *mlist_extend(mlist_t *p);
 static mlist_t *mlist_extend(mlist_t *p) {
-  p->next = mlist_create();
+  p->next        = mlist_create();
   p->next->begin = p->begin;
   return p->next;
 }
@@ -19,7 +19,7 @@ mlist_t *mlist_create (void) {
   return p;
 }
 
-mlist_datum_t *mlist_alloc(mlist_t **p, size_t size) {
+void *mlist_alloc(mlist_t **p, size_t size) {
   mlist_t *lp = *p;
   MLIST_MALLOC(lp->datum, size);
   *p = mlist_extend(*p);
